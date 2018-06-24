@@ -1,0 +1,45 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=4393cc61df3e0a84478c986b2011b8144a482d5d883f212aee7c0133123455d8
+language: node_js
+node_js:
+  - "8"
+  - "6"
+  - "10"
+python:
+  - "3.6"
+os:
+  - linux
+  - osx
+cache:
+  directories:
+  - node_modules # NPM packages
+before_script:
+  - which python
+  - python --version
+  - which pip
+  - pip --version
+  - which pip3
+  - pip3 --version
+  - pip3 install --upgrade black
+  - which black || true
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter;
+    elif [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-darwin-amd64 > ./cc-test-reporter;
+    else
+      echo Error:TRAVIS_OS_NAME && exit 1;
+    fi
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - which black
+  - black --version
+  - npm run build
+  - npm test
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+notifications:
+  email:
+    on_success: never
+    on_failure: change
