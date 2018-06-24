@@ -19,10 +19,12 @@ before_script:
   - python --version
   - which pip
   - pip --version
-  - which pip3
-  - pip3 --version
-  - pip3 install --upgrade black
-  - which black || true
+  - which pyenv
+  - pyenv versions
+  - pyenv shell
+  - pyenv shell 3.6
+  - pip install --upgrade black
+  - which black
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
       curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter;
     elif [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
