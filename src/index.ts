@@ -71,7 +71,7 @@ export const beautifier: Beautifier = {
     const rootDir = projectPath || (filePath && path.basename(filePath));
     const { wrap_line_length: wrapLineLength } = options;
     const args = ["--safe", "-"];
-    if (wrapLineLength !== undefined) {
+    if (wrapLineLength) {
       args.push(...["--line-length", wrapLineLength]);
     }
     const runOptions: RunOptions = rootDir
