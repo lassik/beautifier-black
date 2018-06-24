@@ -1,6 +1,6 @@
 {
   "name": "@unibeautify/beautifier-black",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Black beautifier for Unibeautify",
   "main": "dist/src/index.js",
   "typings": "dist/src/index.d.ts",
