@@ -1,6 +1,6 @@
 {
   "name": "@unibeautify/beautifier-black",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "description": "Black beautifier for Unibeautify",
   "main": "dist/src/index.js",
   "typings": "dist/src/index.d.ts",
@@ -36,7 +36,6 @@
     "@types/jest": "^22.2.3",
     "@types/node": "^10.0.3",
     "@types/read-pkg-up": "^3.0.1",
-    "@types/tmp": "0.0.33",
     "jest": "^23.1.0",
     "npm-run-all": "^4.1.2",
     "rimraf": "^2.6.2",
@@ -48,7 +47,6 @@
     "unibeautify": "^0.15.0"
   },
   "dependencies": {
-    "read-pkg-up": "^3.0.0",
-    "tmp": "0.0.33"
+    "read-pkg-up": "^3.0.0"
   }
 }
