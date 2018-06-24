@@ -6,23 +6,21 @@ node_js:
   - "8"
   - "6"
   - "10"
-python:
-  - "3.6"
 os:
   - linux
-  - osx
+  # - osx
 cache:
   directories:
   - node_modules # NPM packages
 before_script:
+  - pyenv versions
+  - pyenv shell
+  - pyenv shell 3.6
   - which python
   - python --version
   - which pip
   - pip --version
   - which pyenv
-  - pyenv versions
-  - pyenv shell
-  - pyenv shell 3.6
   - pip install --upgrade black
   - which black
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
