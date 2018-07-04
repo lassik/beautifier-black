@@ -23,10 +23,10 @@ function testFile(fixtureFileName: string) {
         languageName: "Python",
         options: {
           Python: {
-            wrap_line_length: 80
-          }
+            wrap_line_length: 80,
+          },
         },
-        text
+        text,
       })
       .then(results => {
         expect(raw(results)).toMatchSnapshot();
