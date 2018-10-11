@@ -13,6 +13,7 @@ cache:
   directories:
     - node_modules
 before_script:
+  - eval "$(pyenv init -)"
   - pyenv versions
   - pyenv shell
   - pyenv shell 3.6
