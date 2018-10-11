@@ -13,16 +13,13 @@ cache:
   directories:
     - node_modules
 before_script:
-  - eval "$(pyenv init -)"
-  - pyenv versions
-  - pyenv shell
-  - pyenv shell 3.6
-  - which python
-  - python --version
-  - which pip
-  - pip --version
-  - which pyenv
-  - pip install --upgrade black
+  - wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz
+  - tar -xf Python-3.7.0.tar.xz
+  - (cd Python-3.7.0 && ./configure && make && make altinstall)
+  - make altinstall
+  - which python3.7
+  - which pip3.7
+  - pip3.7 install --upgrade black
   - which black
   - OS_NAME=$(uname | tr A-Z a-z)
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-${OS_NAME}-amd64 > ./cc-test-reporter
