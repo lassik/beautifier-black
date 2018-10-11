@@ -15,8 +15,9 @@ cache:
 before_script:
   - wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz
   - tar -xf Python-3.7.0.tar.xz
-  - (cd Python-3.7.0 && ./configure && make && make altinstall)
+  - (cd Python-3.7.0 && ./configure --prefix=$HOME/.local && make && make altinstall)
   - make altinstall
+  - export PATH=$HOME/.local/bin:$PATH
   - which python3.7
   - which pip3.7
   - pip3.7 install --upgrade black
