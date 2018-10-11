@@ -11,7 +11,7 @@ os:
   # - osx
 cache:
   directories:
-  - node_modules # NPM packages
+    - node_modules # NPM packages
 before_script:
   - pyenv versions
   - pyenv shell
