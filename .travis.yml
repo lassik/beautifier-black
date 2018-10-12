@@ -3,7 +3,6 @@ env:
     - CC_TEST_REPORTER_ID=4393cc61df3e0a84478c986b2011b8144a482d5d883f212aee7c0133123455d8
 language: node_js
 node_js:
-  - "6"
   - "8"
   - "10"
 os:
